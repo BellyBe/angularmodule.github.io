@@ -1,0 +1,41 @@
+<!-- <p>home works!</p>-->
+
+<div class="container color-dark">
+    <div class="col">
+      <p>Un élément de la liste </p>
+    </div>
+  
+    <div class="col">
+      <p>Ma liste d'éléments ({{nbItems}}) </p>
+    </div>
+  </div>
+  
+
+<div class="container color-light" [@animobjectifs]=" this.objectifs.length">
+    <div class="col">
+      <p class="sm">Un nouvel élément de ma liste</p>
+
+      <!-- Champ de texte avec binding [(ngModel)] pour lier btnText -->
+      <input type="text" class="form-control mb-2" placeholder="Entrez un objectif..." [(ngModel)]="btnText">
+      
+      <!-- Affichage du texte de btnText (facultatif) -->
+      <p>{{ btnText }}</p>
+
+      <!-- Bouton pour ajouter un nouvel élément avec l'action (click)="ajoutItem()" -->
+      <input type="submit" class="btn" (click)="ajoutItem()" [ngClass]="getExplicitClass()">
+    </div>
+  
+    <div class="col">
+      <!--<p *ngFor="let objectif of objectifs" class="life-container" [@fade] > {{ objectif }}</p>-->
+
+       <!-- Affichage des objectifs avec gestion de l'index -->
+    <p
+        *ngFor="let objectif of objectifs; let i = index"
+        class="life-container"
+        (click)="goToConsultAct(i)"
+      >
+        {{ i + 1 }}. {{ objectif }}
+    </p>
+
+    </div>
+</div>

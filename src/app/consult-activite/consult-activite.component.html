@@ -1,0 +1,53 @@
+<p>consult-activite works!</p>
+
+<!--<h1> <strong> Test de récupération des paramètres : </strong></h1>-->
+<!--<p> 1. Paramètre 1 transmis : <strong> {{param1}} </strong></p>
+<p> 2. Paramètre 2 transmis Param 1 : <strong> {{param2}} </strong> </p>
+-->
+<!--<ol>
+    <li *ngIf="param1">Paramètre 1 transmis : <strong>{{ param1 }}</strong></li>
+    <li *ngIf="param2">Paramètre 2 transmis : <strong>{{ param2 }}</strong></li>
+</ol>-->
+
+<div class="container">
+  <h2>Détails de l'Activité</h2>
+
+  <!-- Mode affichage -->
+  <div *ngIf="!isEditing">
+    <p *ngIf="objectif; else notFound">
+      Numéro de l'activité : <strong>{{ index }}</strong><br>
+      Nom de l'activité : <strong>{{ objectif }}</strong>
+    </p>
+
+    <button class="btn btn-primary" (click)="activerEdition()">Modifier</button>
+    <button class="btn btn-danger" (click)="supprimeElem()">Supprimer</button>
+    <button class="btn btn-secondary" (click)="retourAccueil()">Retour</button>
+
+  </div>
+
+  <!-- Mode édition -->
+  <div *ngIf="isEditing">
+    <p>Numéro de l'activité : <strong>{{ index }}</strong></p>
+    <label for="editTitle">Nom de l'activité :</label>
+    <input
+      id="editTitle"
+      type="text"
+      class="form-control"
+      [(ngModel)]="editedTitle"
+    />
+    <button class="btn btn-success" (click)="sauvegardeModifications()">
+      Sauvegarder
+    </button>
+    <button class="btn btn-secondary" (click)="annulerEdition()">
+      Annuler
+    </button>
+
+  </div>
+
+  <ng-template #notFound>
+    <p>Aucun objectif trouvé pour cet index.</p>
+  </ng-template>
+
+  
+  
+</div>

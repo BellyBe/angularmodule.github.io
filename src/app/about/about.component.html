@@ -1,0 +1,9 @@
+<p>about works! </p>
+
+<ol>
+    <li *ngFor="let objectif of objectifs">
+      {{ objectif }}
+    </li>
+  </ol>
+
+  <p *ngIf="objectifs.length === 0">Aucun élément dans la liste.</p>
