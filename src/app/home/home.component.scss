@@ -10,12 +10,12 @@
 
 .color-dark {
     background: #2885C4;
-    transform: rotate(2deg);
+    //transform: rotate(2deg);
 
 }
 .color-light {
     background: #57B3F1;
-    transform: rotate(-4deg);
+    //transform: rotate(-4deg);
 
 }
 
@@ -62,3 +62,12 @@ input.btnok:hover{
 }
 
 
+/* TP4 */
+
+.container .list { 
+    display : grid ;
+    grid-template-columns : 100% auto;
+    padding: 2em 1em;
+    color: rgb(22, 23, 24);
+}
+    

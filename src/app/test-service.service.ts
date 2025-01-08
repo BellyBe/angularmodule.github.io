@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +10,11 @@ export class TestServiceService {
  // Déplacez ici le tableau objectifs
  private objectifs: string[] = [];
 
- constructor() {
-  
- }
+ constructor(private http: HttpClient) { }
+
+ getData(): Observable<any> {
+  return this.http.get('https://projetangular-32f79-default-rtdb.firebaseio.com/:null');
+}
 
  // Méthode pour récupérer le tableau d'objectifs
  getObjectifs(): string[] {

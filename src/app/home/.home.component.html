@@ -2,18 +2,18 @@
 
 <div class="container color-dark">
     <div class="col">
-      <p>Rajouter des éléments</p>
+      <p>Un élément de la liste </p>
     </div>
   
     <div class="col">
-      <p>Nombre d'activité actuels : {{nbItems}} </p>
+      <p>Ma liste d'éléments ({{nbItems}}) </p>
     </div>
   </div>
   
 
 <div class="container color-light" [@animobjectifs]=" this.objectifs.length">
     <div class="col">
-      <p class="sm">Rajouter une nouvelle activité</p>
+      <p class="sm">Un nouvel élément de ma liste</p>
 
       <!-- Champ de texte avec binding [(ngModel)] pour lier btnText -->
       <input type="text" class="form-control mb-2" placeholder="Entrez un objectif..." [(ngModel)]="btnText">
@@ -41,3 +41,14 @@
 </div>
 
 
+<div class="container color-dark">
+
+<div class="card border−primary mb−3" style="max−width: 18rem;">
+   <div class="card−header">Header</div>
+    <div class="card−body text−primary">
+      <h5 class="card−title">Primary card title</h5> 
+      <p class="card−text">Some quick example text to build on the card title and make up the bulk of the card ' s content .</p> 
+    </div>
+</div>
+
+</div>
